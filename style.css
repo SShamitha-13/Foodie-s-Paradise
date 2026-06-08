@@ -1,0 +1,247 @@
+/* 🔹 Reset */
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #121212;
+    color: white;
+}
+
+/* 🔹 Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    padding: 15px 30px;
+}
+
+.logo {
+    color: orange;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: orange;
+    color: black;
+}
+
+.nav-links .active {
+    background: orange;
+    color: black;
+}
+
+/* 🔹 Hero Section (FIXED CENTER) */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ddd;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    background: orange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background: darkorange;
+}
+
+/* 🔹 Menu Grid */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+/* 🔹 Card */
+.card {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+/* 🔹 Square Image */
+.card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* 🔹 Offer Badge */
+.offer {
+    position: absolute;
+    background: red;
+    color: white;
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    top: 10px;
+    left: 10px;
+}
+
+/* 🔹 Text */
+.card h2 {
+    margin: 10px 0;
+}
+
+.card p {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.card span {
+    color: orange;
+    font-weight: bold;
+}
+
+/* 🔹 Bill Section */
+.bill-box {
+    text-align: center;
+    margin: 20px;
+}
+
+/* 🔹 Horizontal Items */
+#billItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 🔹 Item Tag */
+.item {
+    background: orange;
+    color: black;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* 🔹 Buttons */
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background: orange;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkorange;
+}
+
+/* 🔹 Payment */
+#paymentOptions {
+    margin-top: 15px;
+}
+
+/* 🔹 Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* 🔹 Contact Page */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.contact-form:hover,
+.contact-info:hover {
+    box-shadow: 0 0 15px rgba(255,165,0,0.5);
+}

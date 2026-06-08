@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=4gXZA31yZG9Qeh1twkNWDijY2eTndTe2J5RfucFQyK41fYXq6NJymsh2BCanUI5whqg2_CWKYVTF2UCFLihJcGkjYomBjQSnlORRVpiinlpi4dON2nCEiMewwzWY1q438G_oEUgof--YR0oXJsO6Szhy0ASJJbg1MCYkQiSUo2nB6s8vTkDxJfg_JUXlt9NB" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9ydWxtcy5yZXZhLmVkdS5pbi9wbHVnaW5maWxlLnBocC80ODM2Ni9hc3NpZ25zdWJtaXNzaW9uX2ZpbGUvc3VibWlzc2lvbl9maWxlcy8xNDY0NjQvbWVudS5odG1sP2ZvcmNlZG93bmxvYWQ9MQ"/></head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🍔 Foodie's</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="contact.html">Reviews</a></li>
+    </ul>
+</nav>
+
+<h1 style="text-align:center;">Our Menu 🍔</h1>
+<!-- 🧾 BILL SECTION -->
+<div class="bill-box">
+    <h2>Your Bill 🧾</h2>
+
+    <!-- Items will appear here -->
+    <div id="billItems"></div>
+
+    <h3 id="total">Total: ₹0</h3>
+
+    <button onclick="generateBill()">Done</button>
+
+    <h3 id="finalBill"></h3>
+</div>
+
+<div id="paymentOptions" style="display:none;">
+    <center>
+    <h3>Payment Method 💳</h3>
+    <button>Cash</button>
+    <button onclick="showUPI()">UPI</button>
+    <button>Card</button>
+    </center>
+</div>
+
+<div id="upiScanner" style="display:none; text-align:center;">
+    <h3>Scan & Pay 📱</h3>
+    <img id="upiQR">
+</div>
+
+
+<!--MENU -->
+<div class="menu-container">
+
+<div class="card" onclick="addToBill('Pizza',200)">
+    <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65">
+    <h2>Pizza</h2>
+    <span>₹200</span>
+    <p>Cheese, Tomato, Capsicum</p>
+</div>
+
+<div class="card" onclick="addToBill('Pasta',180)">
+    <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb">
+    <h2>Pasta</h2>
+    <span>₹180</span>
+    <p>Cream, Garlic, Cheese</p>
+</div>
+
+<div class="card" onclick="addToBill('Fries',80)">
+    <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877">
+    <h2>Fries</h2>
+    <span>₹80</span>
+    <p>Potato, Salt</p>
+</div>
+
+<div class="card" onclick="addToBill('Burger',120)">
+    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+    <h2>Burger</h2>
+    <span>₹120</span>
+    <p>Bun, Patty, Cheese</p>
+</div>
+<!-- Beverages Section -->
+
+
+
+
+
+<div class="card" onclick="addToBill('Cranberry Juice',80)">
+    <div class="offer">SUMMER</div>
+    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888">
+    <h2>Cranberry Juice</h2>
+    <p>Cranberries, Sugar, Ice</p>
+    <span>₹80</span>
+</div>
+
+<div class="card" onclick="addToBill('Cold Coffee',90)">
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+    <h2>Cold Coffee</h2>
+    <p>Coffee, Milk, Ice Cream</p>
+    <span>₹90</span>
+</div>
+
+<div class="card" onclick="addToBill('Milkshake',130)">
+    <div class="offer">BUY 1 GET 1</div>
+    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699">
+    <h2>Milkshake</h2>
+    <p>Milk, Ice Cream, Chocolate</p>
+    <span>₹130</span>
+</div>
+
+<!-- Desserts -->
+
+<div class="card" onclick="addToBill('Ice Cream',70)">
+    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
+    <h2>Ice Cream</h2>
+    <p>Milk, Sugar, Flavors</p>
+    <span>₹70</span>
+</div>
+
+
+
+<div class="card" onclick="addToBill('Brownie',110)">
+    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+    <h2>Brownie</h2>
+    <p>Chocolate, Butter, Sugar</p>
+    <span>₹110</span>
+</div>
+
+</div>
+
+<script>
+let total = 0;
+let count = 0;
+//SHINEY
+function addToBill(item, price) {
+    let container = document.getElementById("billItems");
+
+    let span = document.createElement("span");
+    span.className = "item";
+    span.innerText = item + " ₹" + price;
+
+    container.appendChild(span);
+
+    total += price;
+    count++;
+
+    document.getElementById("total").innerText = "Total: ₹" + total;
+}
+
+function generateBill() {
+    let gst = total * 0.05;
+    let sgst = total * 0.05;
+    let final = total + gst + sgst;
+
+    document.getElementById("finalBill").innerText =
+        "Items: " + count +
+        " | GST: ₹" + gst.toFixed(2) +
+        " | SGST: ₹" + sgst.toFixed(2) +
+        " | Final: ₹" + final.toFixed(2);
+
+    document.getElementById("paymentOptions").style.display = "block";
+}
+</script>
+
+</body>
+</html>

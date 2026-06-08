@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=O3fadz-EswmnyAnTSj9aZfehZExNwCHyUvhUboC9sdEoDbN8sdfKLQlc5UvJ-3rRnAA-2MGZf29qf12YLE1NFUn1nYH57cEDOBXKZD2Se73YbngpqUu1zyA7T6Bu3YrQOKPRMORRzZ_7mYWDu2mWQEwPmgriGr_JM_N-k9irF5uoJT5Re1_PTzElXdxZtH7I" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9ydWxtcy5yZXZhLmVkdS5pbi9wbHVnaW5maWxlLnBocC80ODM2Ni9hc3NpZ25zdWJtaXNzaW9uX2ZpbGUvc3VibWlzc2lvbl9maWxlcy8xNDY0NjQvY29udGFjdC5odG1sP2ZvcmNlZG93bmxvYWQ9MQ"/></head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Foodie's</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html" class="active">Reviews</a></li>
+    </ul>
+</nav>
+
+<h1 style="text-align:center; margin-top:20px;">REVIEWS</h1>
+
+<div class="contact-container">
+
+    <!-- Form -->
+    <form class="contact-form" onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required><br><br>
+        <input type="email" placeholder="Your Email" required><br><br>
+        <textarea placeholder="Your Message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Info -->
+    <div class="contact-info">
+        <h2>Our Details 📍</h2>
+        <p>📞 Phone: +91 9876543210</p>
+        <p>📧 Email: foodies@gmail.com</p>
+        <p>📍 Location: Bangalore, India</p>
+    </div>
+
+</div>
+
+<script>
+function submitForm(e) {
+    e.preventDefault();
+    alert("Message sent successfully! ✅");
+}
+</script>
+
+</body>
+</html>
